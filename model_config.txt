@@ -1,0 +1,19 @@
+1. py manage.py shell 
+    from django.db import connection
+    c=connection.cursor()
+    exit()
+2. django-admin startproject.py modelproject
+    cd modelproject
+
+************setting.py************
+INSTALLED_APPS={'testapp', 'test}
+
+************Models.py************
+to create a new model class
+class emp(models.Model)
+eno=models.IntegerField()
+enone=models.CharField(max_length=64)
+
+************admin.py************
+from testapp.models import emp
+admin.site.register(emp)
