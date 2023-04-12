@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from datetime import datetime
+from home.models import User
 # Create your views here.
 def index(request):
     name = {'Name': 'Alok Sharma'}
@@ -20,3 +21,14 @@ def dynamicData(request):
     now = datetime.now()
     return render(request, 'date.html', {'date': now})
 
+def contact(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        phone = request.POST.get('phone')
+        content = request.POST.get('content')
+        print(name, email, phone, content)
+        user=User(name=name, email=email, phone=phone, content=content)
+        user.save()
+    return render(request, 'contact.html')
+    
