@@ -20,5 +20,7 @@ from home import views
 urlpatterns = [
     path('', views.index, name='home'),
     path('contact', views.contact, name='contact'),
+    path('users', views.getUser, name='allUsers'),
+    path('<slug:slug>', views.getParam, name='slug'),
     path('contentviews', views.dynamicData, name='content-views'),
 ]

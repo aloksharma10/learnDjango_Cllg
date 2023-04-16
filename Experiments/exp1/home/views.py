@@ -32,3 +32,9 @@ def contact(request):
         user.save()
     return render(request, 'contact.html')
     
+def getUser(request):
+    users = User.objects.all()
+    return render(request, 'user.html', {'users': users})
+
+def getParam(request, slug):
+    return HttpResponse(f"Your slug is {slug}.")
