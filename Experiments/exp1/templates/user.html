@@ -1,4 +1,5 @@
-{% extends 'base.html' %} {% block title %}Users{% endblock title %} 
+{% extends 'base.html' %}
+ {% block title %}Users{% endblock title %} 
 {% block body %}
 <div class="container">
   <table class="table text-light">
@@ -12,11 +13,11 @@
         <th>Timing</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody >
         {% if users|length %}
             {%for user in users %}
-            <tr>
-                <td>{{ user.sno }}</td>
+            <tr >
+                <td  class={% cycle 'bg-danger' 'bg-primary' 'bg-light' %}>{{ user.sno }}</td>
                 <td>{{ user.name }}</td>
                 <td>{{ user.email }}</td>
                 <td>{{ user.phone }}</td>
