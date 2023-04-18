@@ -16,8 +16,8 @@
     <tbody >
         {% if users|length %}
             {%for user in users %}
-            <tr >
-                <td  class={% cycle 'bg-danger' 'bg-primary' 'bg-light' %}>{{ user.sno }}</td>
+            <tr class={% cycle 'bg-danger' 'bg-primary' 'bg-light' %}>
+                <td>{{ user.sno }}</td>
                 <td>{{ user.name }}</td>
                 <td>{{ user.email }}</td>
                 <td>{{ user.phone }}</td>
