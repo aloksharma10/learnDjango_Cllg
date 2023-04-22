@@ -18,6 +18,7 @@ def faculty(request):
     
 def events(request):
     events_news = EventsNews.objects.all()
+    print(events_news[0].timeStamp)
     return render(request, 'events.html', {'events_news': events_news})
 
 def news(request, id, category):

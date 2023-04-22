@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 class StudentNews(models.Model):
     sno=models.AutoField(primary_key=True)
-    title=models.CharField(max_length=50)
+    title=models.CharField(max_length=200)
     action=models.TextField(default="")
     desc=models.TextField()
     result=models.TextField(default="")
@@ -15,7 +15,7 @@ class StudentNews(models.Model):
 
 class FacultyNews(models.Model):
     sno=models.AutoField(primary_key=True)
-    title=models.CharField(max_length=50)
+    title=models.CharField(max_length=200)
     action=models.TextField(default="")
     desc=models.TextField()
     result=models.TextField(default="")
@@ -26,7 +26,7 @@ class FacultyNews(models.Model):
 
 class EventsNews(models.Model):
     sno=models.AutoField(primary_key=True)
-    title=models.CharField(max_length=50)
+    title=models.CharField(max_length=200)
     action=models.TextField(default="")
     desc=models.TextField()
     result=models.TextField(default="")
