@@ -12,25 +12,22 @@
         <div class="card" style="background-color: #dfd0b2; border-radius: 13px;">
           <span
             class="position-absolute top-0 start-0 badge rounded-pill bg-danger"
-            >{{news.title}}</span
+            >{{news.timeStamp}}</span
           ><img
-            src="https://c.ndtvimg.com/2023-04/9ik9mafg_climbers-incredible-rescue-of-indian-anurag-maloo-from-crevasse_625x300_21_April_23.jpg"
+          style='height: 26vh'
+          src="/{{news.img}}"
             class="card-img-top mt-2"
             alt="..."
           />
           <div class="card-body">
             <p class="card-text">
-              <small class="text-muted">4/21/2023, 12:09:00 PM</small>
+              <small class="text-muted">{{news.timeStamp}}</small>
             </p>
             <h5 class="card-title">
-              RESPECT": Dramatic Video Shows Polish Climber Rescuing India's
-              Anurag Maloo - NDTV
+             {{news.title}}
             </h5>
             <p class="card-text">
-              A day after it was announced that Indian climber Anurag Maloo, who
-              went missing while descending Nepal's Mount Annapurna last week, has
-              been found alive, a dramatic video of the rescue operation has
-              emerged on social media.
+             {{news.desc|truncatechars:123}}
             </p>
             <a
               href="news/student/{{news.sno}}"

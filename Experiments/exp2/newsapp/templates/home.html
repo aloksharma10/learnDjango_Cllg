@@ -1,5 +1,4 @@
-{% extends 'base.html' %} {% load static %} {% block title %}Home | Newsapp{% endblock title %} {% block body %} {% comment %} #efd9ab82, #f1565680 
-{% endcomment %}
+{% extends 'base.html' %} {% load static %} {% block title %}Home | Newsapp{% endblock title %} {% block body %} {% comment %} #efd9ab82, #f1565680 {% endcomment %}
 <div
   class="justify-content-center container-fluid border container p-4 my-5"
   style="
@@ -35,36 +34,85 @@
   <div class="border-bottom mx-3 mb-4 border-secondary">
     <h2>LATEST UPDATES</h2>
   </div>
-  <div class="col-md-4">
-    <div class="row m-2">
-      <div class="card" style="background-color: #dfd0b2">
-        <span
-          class="position-absolute top-0 start-0 badge rounded-pill bg-danger"
-          >NDTV News</span
-        ><img
-          src="https://c.ndtvimg.com/2023-04/9ik9mafg_climbers-incredible-rescue-of-indian-anurag-maloo-from-crevasse_625x300_21_April_23.jpg"
-          class="card-img-top mt-2"
-          alt="..."
-        />
-        <div class="card-body">
-          <p class="card-text">
-            <small class="text-muted">4/21/2023, 12:09:00 PM</small>
-          </p>
-          <h5 class="card-title">
-            RESPECT": Dramatic Video Shows Polish Climber Rescuing India's
-            Anurag Maloo - NDTV
-          </h5>
-          <p class="card-text">
-            A day after it was announced that Indian climber Anurag Maloo, who
-            went missing while descending Nepal's Mount Annapurna last week, has
-            been found alive, a dramatic video of the rescue operation has
-            emerged on social media.
-          </p>
-          <a
-            href="https://www.ndtv.com/india-news/video-climbers-incredible-rescue-of-indian-anurag-maloo-from-crevasse-3967104"
-            class="btn btn-sm custom-link"
-            >Read More</a
-          >
+  <div class="row">
+    <div class="col-md-4">
+      <div class="row m-2">
+        <div class="card" style="background-color: #dfd0b2">
+          <span
+            class="position-absolute top-0 start-0 badge rounded-pill bg-danger"
+            >Student News</span
+          ><img
+            src="/{{student_news.img}}"
+            style='height: 26vh'
+            class="card-img-top mt-2"
+            alt="..."
+          />
+          <div class="card-body">
+            <p class="card-text">
+              <small class="text-muted">{{student_news.timeStamp}}</small>
+            </p>
+            <h5 class="card-title">{{student_news.title}}</h5>
+            <p class="card-text">{{student_news.desc|truncatechars:123}}</p>
+            <a
+              href="news/student/{{student_news.sno}}"
+              class="btn btn-sm custom-link"
+              >Read More</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="row m-2">
+        <div class="card" style="background-color: #dfd0b2">
+          <span
+            class="position-absolute top-0 start-0 badge rounded-pill bg-danger"
+            >Faculty News</span
+          ><img
+            src="/{{faculty_news.img}}"
+            style='height: 26vh'
+            class="card-img-top mt-2"
+            alt="..."
+          />
+          <div class="card-body">
+            <p class="card-text">
+              <small class="text-muted">{{faculty_news.timeStamp}}</small>
+            </p>
+            <h5 class="card-title">{{faculty_news.title}}</h5>
+            <p class="card-text">{{faculty_news.desc|truncatechars:123}}</p>
+            <a
+              href="news/faculty/{{faculty_news.sno}}"
+              class="btn btn-sm custom-link"
+              >Read More</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="row m-2">
+        <div class="card" style="background-color: #dfd0b2">
+          <span
+            class="position-absolute top-0 start-0 badge rounded-pill bg-danger"
+            >Events News</span
+          ><img
+            src="/{{events_news.img}}"
+            style='height: 26vh'
+            class="card-img-top mt-2"
+            alt="..."
+          />
+          <div class="card-body">
+            <p class="card-text">
+              <small class="text-muted">{{events_news.timeStamp}}</small>
+            </p>
+            <h5 class="card-title">{{events_news.title}}</h5>
+            <p class="card-text">{{events_news.desc|truncatechars:123}}</p>
+            <a
+              href="news/events/{{events_news.sno}}"
+              class="btn btn-sm custom-link"
+              >Read More</a
+            >
+          </div>
         </div>
       </div>
     </div>
