@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+ {% block title %}Emp{% endblock title %} 
+{% block body %}
+<div class="container">
+  <table class="table text-light">
+    <thead>
+      <tr>
+        <th>Sno.</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Timing</th>
+      </tr>
+    </thead>
+    <tbody >
+        {% if emp|length %}
+            {%for user in emp %}
+            <tr>
+                <td>{{ user.sno }}</td>
+                <td>{{ user.Ename }}</td>
+                <td>{{ user.Eemail }}</td>
+                <td>{{ user.timeStamp }}</td>
+            </tr>
+            {% endfor %}
+        {% else %}
+        <tr class='text-center font-monospace'>
+            <td colspan="6">No Emp found</td>
+        </tr>
+        {% endif %}
+      
+    </tbody>
+  </table>
+</div>
+{% endblock body %}

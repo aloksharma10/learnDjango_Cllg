@@ -21,6 +21,7 @@ urlpatterns = [
     path('', views.index, name='home'),
     path('contact', views.contact, name='contact'),
     path('users', views.getUser, name='allUsers'),
-    path('<slug:slug>', views.getParam, name='slug'),
+    # path('<slug:slug>', views.getParam, name='slug'),
+    path('emps', views.getEmp, name='allEmps'),
     path('contentviews', views.dynamicData, name='content-views'),
 ]

@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Nanum+Gothic&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Balsamiq Sans', cursive;
+  font-weight: 300;
+
+}
+.custom-btn{
+  background: #cfb78382;
+  color: #000;
+  padding: 7px 15px;
+  border-radius: 9px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 20px;
+  margin: 0 10px;
+  border: #cfb783 1px solid;
+}
+.custom-btn:hover{
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.custom-link{
+  background: #cfb78382;
+  color: #000;
+  padding: 7px 15px;
+  border-radius: 9px;
+  text-decoration: none;
+  display: inline-block;
+  border: #cfb783 1px solid;
+}
+
+.custom-link:hover{
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}

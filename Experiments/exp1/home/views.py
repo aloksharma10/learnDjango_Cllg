@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from datetime import datetime
-from home.models import User
+from home.models import User, Emp
 # Create your views here.
 def index(request):
     name = {'Name': 'Alok Sharma'}
@@ -38,3 +38,8 @@ def getUser(request):
 
 def getParam(request, slug):
     return HttpResponse(f"Your slug is {slug}.")
+
+def getEmp(request):
+    emp=Emp.objects.all()
+    print(emp)
+    return render(request, 'emp.html', {'emp': emp})
