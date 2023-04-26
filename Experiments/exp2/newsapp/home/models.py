@@ -8,6 +8,9 @@ class StudentNews(models.Model):
     desc=models.TextField()
     result=models.TextField(default="")
     img= models.ImageField(upload_to='static/postImg',default="")
+    img1= models.ImageField(upload_to='static/postImg',default="")
+    img2= models.ImageField(upload_to='static/postImg',default="")
+    img3= models.ImageField(upload_to='static/postImg',default="")
     timeStamp = models.DateTimeField(auto_now_add=True, blank=True)
 
     def __str__(self):
@@ -20,6 +23,9 @@ class FacultyNews(models.Model):
     desc=models.TextField()
     result=models.TextField(default="")
     img= models.ImageField(upload_to='static/postImg',default="")
+    img1= models.ImageField(upload_to='static/postImg',default="")
+    img2= models.ImageField(upload_to='static/postImg',default="")
+    img3= models.ImageField(upload_to='static/postImg',default="")
     timeStamp = models.DateTimeField(auto_now_add=True, blank=True)
     def __str__(self):
         return self.title
@@ -31,6 +37,9 @@ class EventsNews(models.Model):
     desc=models.TextField()
     result=models.TextField(default="")
     img= models.ImageField(upload_to='static/postImg',default="")
+    img1= models.ImageField(upload_to='static/postImg',default="")
+    img2= models.ImageField(upload_to='static/postImg',default="")
+    img3= models.ImageField(upload_to='static/postImg',default="")
     timeStamp = models.DateTimeField(auto_now_add=True, blank=True)
     def __str__(self):
         return self.title
