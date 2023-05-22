@@ -1,7 +1,5 @@
 from django.db import models
 
-
-
 # Added manually
 class User(models.Model):
     sno = models.AutoField(primary_key=True)
