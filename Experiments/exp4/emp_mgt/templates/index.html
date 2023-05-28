@@ -1,9 +1,43 @@
-{% extends 'base.html' %}
-{% load static %}
-{% block title %}Home{% endblock title %}
-{% block body %}
-<div class="container mx-auto">
-  
+{% extends 'base.html' %} {% load static %} {% block title %}Home
+{% endblock title %} {% block body %}
+<div class="d-flex justify-content-center align-items-center" style="height: 90vh; background: url(https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1184&q=80) no-repeat center bottom; overflow: hidden;
+background-size: cover;">
 
+<div
+  class="justify-content-center container-fluid border container p-4"
+  style="
+    background-color: #e9e0e0;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+      rgba(50, 50, 93, 0.25) 0px 1px 14px -20px,
+      rgba(0, 0, 0, 0.3) 0px 18px 60px -30px;
+    max-width: 1300px;
+    border-radius: 50px;
+  "
+>
+
+  <div class="text-center">
+    <h2 class="text-uppercase fw-bold">
+      BCIIT Employee Management Portal
+    </h2>
+    <p class="w-75 mx-auto text-dark">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid officia
+      commodi hic ex quos labore tempora? Aliquam est animi consequatur, quo
+      quas fuga sit unde repellendus placeat? Reprehenderit, ad fugiat?
+    </p>
+  </div>
+  <div class="d-flex justify-content-center mx-auto w-50 p-2 mt-4">
+    <a href="/allemp"
+      ><button type="button" class="custom-btn mx-2">All Employee</button></a
+    >
+    <a href="/addemp"
+      ><button type="button" class="custom-btn mx-2">Add Employee</button></a
+    >
+    <a href="/search-remove"
+      ><button type="button" class="custom-btn text-white" style="background: #2d58bd;
+      font-weight: 500;">Search & Remove Employee</button></a
+    >
+  </div>
 </div>
+</div>
+
 {% endblock body %}

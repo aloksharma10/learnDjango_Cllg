@@ -21,6 +21,5 @@ urlpatterns = [
     path('', views.home),
     path('allemp', views.all_emp), 
     path('addemp', views.add_emp),
-    path('removeemp', views.remove_emp),
-    path('filteremp', views.filter_emp),
+    path('search-remove', views.search_remove),
 ]

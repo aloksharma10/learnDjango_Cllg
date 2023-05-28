@@ -2,25 +2,37 @@
 {% load static %}
 {% block title %}Home{% endblock title %}
 {% block body %}
-<div id="carouselExample" class="carousel slide">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="..." class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="..." class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="..." class="d-block w-100" alt="...">
-      </div>
+<div class="container my-5 py-3 px-3 rounded" style="background: #e7e4e4;">
+    <div class="d-flex justify-content-between align-items-center mb-2" >
+        <h2 class="fw-bold" >ALL EMPLOYEE </h2>
+        <a href="/addemp" rel="noopener noreferrer"> <button class="custom-btn text-light" style="background: #2d58bd">Add Employee</button></a>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Profile</th>
+            <th scope="col">Department</th>
+            <th scope="col">Role</th>
+            <th scope="col">Joining Date</th>
+          </tr>
+        </thead>
+        <tbody>
+            <!-- below content will wrap -->
+          <tr>
+            <th>2</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+            <td>@mdo</td>
+            <td>@mdo</td>
+            <td>@mdo</td>
+            <td>@mdo</td>
+          </tr>
+        </tbody>
+      </table>
+</div>
 {% endblock body %}
