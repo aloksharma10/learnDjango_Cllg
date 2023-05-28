@@ -22,4 +22,5 @@ urlpatterns = [
     path('allemp', views.all_emp), 
     path('addemp', views.add_emp),
     path('search-remove', views.search_remove),
+    path('removeemp/<int:id>', views.removeemp),
 ]

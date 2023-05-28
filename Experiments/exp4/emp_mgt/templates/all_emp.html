@@ -14,24 +14,29 @@
             <th scope="col">Name</th>
             <th scope="col">Email</th>
             <th scope="col">Phone</th>
-            <th scope="col">Profile</th>
             <th scope="col">Department</th>
             <th scope="col">Role</th>
+            <th scope="col">Gender</th>
             <th scope="col">Joining Date</th>
           </tr>
         </thead>
         <tbody>
             <!-- below content will wrap -->
-          <tr>
-            <th>2</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-          </tr>
+            {% if Employee|length %}
+              {% for emp in Employee %}
+              <tr>
+                <th>{{emp.eno}}</th>
+                <td>{{emp.name}}</td>
+                <td>{{emp.email}}</td>
+                <td>{{emp.phone}}</td>
+                <td>{{emp.dept}}</td>
+                <td>{{emp.role}}</td>
+                <td>{{emp.gender}}</td>
+                <td>{{emp.timeStamp}}</td>
+              </tr>
+              {% endfor %}
+            {% endif %}
+          
         </tbody>
       </table>
 </div>

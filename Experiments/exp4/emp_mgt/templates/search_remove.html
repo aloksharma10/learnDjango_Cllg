@@ -1,0 +1,96 @@
+{% extends 'base.html' %} {% load static %} {% block title %}Home{% endblock title %} {% block body %}
+<div class="container mt-5">
+    <form action="/search-remove" method="POST">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-md-3">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name">
+            </div>
+            <div class="col-md-3">
+                <label for="gender">Gender</label>
+                <select class="form-control" id="exampleFormControlSelect1" name="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div> 
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="dept">Department</label>
+                    <select class="form-control fs-6" name="dept">
+                        <option value="" >Choose option</option>
+                        {% if Department_list|length %}
+                          {% for  dept in Department_list %}
+                            <option value="{{dept.name}}">{{dept.name}}</option>
+                            {% endfor %}
+                        {% endif %}
+                      </select>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <label for="role">Role</label>
+                 <select class="form-control fs-6" name="role">
+                    <option value="" >Choose option</option>
+                    {% if Role_list|length %}
+                      {% for  role in Role_list %}
+                        <option value="{{role.name}}">{{role.name}}</option>
+                        {% endfor %}
+                    {% endif %}
+                  </select>
+            </div>
+        </div>
+        <button type="submit" class="custom-btn mt-3 text-light" style="background: #2d58bd;
+        font-weight: 500;">Search</button>
+    </form>
+</div>
+<div class="container my-4 py-3 px-3 rounded" style="background: #e7e4e4;">
+    <div class="d-flex justify-content-between align-items-center mb-2 " >
+        <h2 class="fw-bold">FILTER EMPLOYEE </h2>
+        <a href="/addemp" rel="noopener noreferrer"> <button class="custom-btn text-light" style="background: #2d58bd">Add Employee</button></a>
+    </div>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Department</th>
+            <th scope="col">Role</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Joining Date</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% if Employee|length %}
+              {% for emp in Employee %}
+              <tr>
+                <th>{{emp.eno}}</th>
+                <td>{{emp.name}}</td>
+                <td>{{emp.email}}</td>
+                <td>{{emp.phone}}</td>
+                <td>{{emp.dept}}</td>
+                <td>{{emp.role}}</td>
+                <td>{{emp.gender}}</td>
+                <td>{{emp.timeStamp}}</td>
+                <td>
+                  <a href="removeemp/{{emp.eno}}"><button type="button" class="custom-btn text-white" style="background: #eb4747;
+                  font-weight: 500;">Remove</button></a>
+              </td>
+              </tr>
+              {% endfor %}
+              {% else %}
+              <tr>
+                <td colspan="8" class="text-center">No Employee Found</td>
+              </tr>
+            {% endif %}
+           
+
+          
+        </tbody>
+      </table>
+</div>
+
+{% endblock body %}

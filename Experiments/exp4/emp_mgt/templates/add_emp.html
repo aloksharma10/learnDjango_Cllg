@@ -42,6 +42,7 @@
               <input
                 type="tel"
                 id="phoneNumber"
+                name="phone"
                 class="form-control form-control-lg"
               />
             </div>
@@ -64,7 +65,6 @@
                     value="other" />
                   <label class="form-check-label" for="otherGender">Other</label>
                 </div>
-
               </div>
           </div>
         </div>
@@ -72,25 +72,24 @@
         <div class="row">
           <div class="col-md-6">
             <label class="form-label select-label">Select Department</label></br>
-            <select class="select w-100 form-control-lg fs-6 border-0">
+            <select class="select w-100 form-control-lg fs-6 border-0" name="dept">
               <option value="" >Choose option</option>
-              <option value="IT">IT</option>
-              <option value="HR">HR</option>
-              <option value="Sales">Sales</option>
-              <option value="Marketing">Marketing</option>
-              <option value="Finance">Finance</option>
-              <option value="Operations">Operations</option>
+              {% if Department_list|length %}
+                {% for  dept in Department_list %}
+                  <option value="{{dept.name}}">{{dept.name}}</option>
+                  {% endfor %}
+              {% endif %}
             </select>
           </div>
           <div class="col-md-6">
             <label class="form-label select-label">Select Role</label></br>
-            <select class="select w-100 form-control-lg fs-6 border-0">
+            <select class="select w-100 form-control-lg fs-6 border-0" name="role">
               <option value="" >Choose option</option>
-              <option value="Manager">Manager</option>
-              <option value="Team Lead">Team Lead</option>
-              <option value="Senior Developer">Senior Developer</option>
-              <option value="Junior Developer">Junior Developer</option>
-              <option value="Intern">Intern</option>
+              {% if Role_list|length %}
+                {% for  role in Role_list %}
+                  <option value="{{role.name}}">{{role.name}}</option>
+                  {% endfor %}
+              {% endif %}
             </select>
           </div>
         </div>
